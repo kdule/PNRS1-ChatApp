@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Dusan Kenjic</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="register">Register</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">email</string>
+    <string name="gender">gender</string>
+    <string name="cBoxReg">Accept Notifications</string>
+    <string name="logout">Log Out</string>
+    <string name="txtC">My Friend</string>
+    <string name="type_message">Type new message</string>
+    <string name="send">Send</string>
+    <string name="txtMCL">My Chat List</string>
+    <string name="person1">Dovla Banat</string>
+    <string name="person2">Zlatko</string>
+    <string name="person3">Boske</string>
+    <string name="person4">Bracale</string>
+    <string name="person5">Savoa</string>
+    <string name="error_log_in">Incorrect logging, please try againt</string>
+    <string name="logged_in_as">Signed in as: </string>
+    <string name="btn_rfsh">Refresh</string>
+    <string name="message_sent">Message is successfully sent</string>
+    <string name="regCompleted">Registration completed</string>
+    <string name="delete_contact">Delete contact</string>
+    <string name="delete_contact_conf">Are you sure you want to delete this contact from your contact list?</string>
+    <string name="delete_con_positive">Yes</string>
+    <string name="delete_con_negative">No</string>
+    <string name="have_new_message">You have new message(s)</string>
+    <string-array name="spinner">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+</resources>
