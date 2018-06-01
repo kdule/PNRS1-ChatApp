@@ -49,6 +49,7 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
 
     private HttpHelper httpHelper;
     private Handler handler;
+    private Cryptography C;
 
 
     @Override
@@ -83,6 +84,7 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
 
         httpHelper = new HttpHelper();
         handler = new Handler();
+        C = new Cryptography();
 
         /*if(contacts != null) {
             for(int i=0; i<contacts.length; i++) {
@@ -159,8 +161,10 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
                     public void run() {
                         JSONObject jsonObject = new JSONObject();
                         try {
+                            String message = msg.getText().toString();
+                            String cryptedMessage = C.cryptography(message);
                             jsonObject.put("receiver", receiver_userid);
-                            jsonObject.put("data", msg.getText().toString());
+                            jsonObject.put("data", cryptedMessage);
 
                             final boolean success = httpHelper.sendMessageToServer(MessageActivity.this, POST_MESSAGE_URL, jsonObject);
 
@@ -218,7 +222,10 @@ public class MessageActivity extends AppCompatActivity implements View.OnClickLi
                                 for (int i = 0; i < json_messages.length(); i++) {
                                     try {
                                         json_message = json_messages.getJSONObject(i);
-                                        messages[i] = new MessageClass(json_message.getString("sender"),json_message.getString("data"));
+                                        String msgFromServer = json_message.getString("data");
+                                        String decryptedMessage = C.cryptography(msgFromServer);
+                                        messages[i] = new MessageClass(json_message.getString("sender"), decryptedMessage);
+
                                     } catch (JSONException e1) {
                                         e1.printStackTrace();
                                     }
